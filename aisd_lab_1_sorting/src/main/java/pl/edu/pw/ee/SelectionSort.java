@@ -7,13 +7,11 @@ public class SelectionSort implements Sorting {
     @Override
     public void sort(double[] nums) {
         if (nums == null) {
-            throw new IllegalArgumentException("nums cant be null!");
+            throw new IllegalArgumentException("Nums array cannot be null");
         }
 
         if (nums.length == 0) {
-                    System.out.println("kisiel");
-            return;
-    
+            throw new IllegalArgumentException("Nums have to contains number");
         }
 
         int n = nums.length;
@@ -27,18 +25,16 @@ public class SelectionSort implements Sorting {
                     minValId = j;
                 }
             }
-        swap(nums,i,minValId);
+            swap(nums, i, minValId);
         }
-
     }
 
-    
-    private void swap(double[] nums, int firstId, int secondId){
-        if(firstId != secondId){
+    private void swap(double[] nums, int firstId, int secondId) {
+        if (firstId != secondId) {
             double firstVal = nums[firstId];
             nums[firstId] = nums[secondId];
             nums[secondId] = firstVal;
         }
     }
-    
+
 }
