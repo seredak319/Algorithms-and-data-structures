@@ -1,7 +1,7 @@
-package pl.edu.pw.ee;
+package pl.sereda;
 
 import java.util.Arrays;
-import pl.edu.pw.ee.services.Sorting;
+import pl.sereda.services.Sorting;
 
 public class RefAlgorithm implements Sorting {
 

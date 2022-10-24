@@ -1,4 +1,4 @@
-package pl.edu.pw.ee.services;
+package pl.sereda.services;
 
 public interface HeapInterface<T extends Comparable<T>> {
 

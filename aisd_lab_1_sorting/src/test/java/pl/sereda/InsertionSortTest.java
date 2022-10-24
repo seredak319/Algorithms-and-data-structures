@@ -1,26 +1,27 @@
-package pl.edu.pw.ee;
+package pl.sereda;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import static org.junit.Assert.assertArrayEquals;
 
-public class QuickSortTest {
+public class InsertionSortTest {
 
-    QuickSort quickSort;
+    InsertionSort insertionSort;
 
     @Before
     public void setUp() {
-        quickSort = new QuickSort();
+        insertionSort = new InsertionSort();
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void parametersNullCheck() {
 
         //when
-        quickSort.sort(null);
+        insertionSort.sort(null);
 
         //then
         assert false;
@@ -33,7 +34,7 @@ public class QuickSortTest {
         double[] nums = new double[0];
 
         //when
-        quickSort.sort(nums);
+        insertionSort.sort(nums);
 
         //then
         assert false;
@@ -49,7 +50,7 @@ public class QuickSortTest {
         goodResult[0] = 1;
 
         //when
-        quickSort.sort(nums);
+        insertionSort.sort(nums);
 
         //then
         assertArrayEquals(nums, goodResult, 0);
@@ -66,7 +67,7 @@ public class QuickSortTest {
         double[] goodResult = new double[]{0, 0, 1, 2, 4};
 
         //when
-        quickSort.sort(nums);
+        insertionSort.sort(nums);
 
         //then
         assertArrayEquals(nums, goodResult, 0);
@@ -80,21 +81,7 @@ public class QuickSortTest {
         double[] goodResult = new double[]{1, 2, 3, 4, 5};
 
         //when
-        quickSort.sort(nums);
-
-        //then
-        assertArrayEquals(nums, goodResult, 0);
-    }
-
-    @Test
-    public void randomNumbersTest() {
-
-        //given
-        double[] nums = new double[]{4, 3, 8, 7, 1, 100, -21, 42, 0.42, 6, 5, 6};
-        double[] goodResult = new double[]{-21, 0.42, 1, 3, 4, 5, 6, 6, 7, 8, 42, 100};
-
-        //when
-        quickSort.sort(nums);
+        insertionSort.sort(nums);
 
         //then
         assertArrayEquals(nums, goodResult, 0);
@@ -108,7 +95,7 @@ public class QuickSortTest {
         double[] goodResult = new double[]{1, 2, 3, 4, 5};
 
         //when
-        quickSort.sort(nums);
+        insertionSort.sort(nums);
 
         //then
         assertArrayEquals(nums, goodResult, 0);
@@ -122,7 +109,7 @@ public class QuickSortTest {
         double[] goodResult = new double[]{5, 5, 5, 5, 5};
 
         //when
-        quickSort.sort(nums);
+        insertionSort.sort(nums);
 
         //then
         assertArrayEquals(nums, goodResult, 0);
@@ -136,7 +123,7 @@ public class QuickSortTest {
         double[] goodResult = new double[]{-100.1, -69.69, -53.322, -1.23, 0.002, 3.21};
 
         //when
-        quickSort.sort(nums);
+        insertionSort.sort(nums);
 
         //then
         assertArrayEquals(nums, goodResult, 0);
@@ -146,21 +133,25 @@ public class QuickSortTest {
     public void randomWithSeedTest() {
 
         //given
-        int initSize = 100;
-        int seed = 2;
-        double[] nums = new double[initSize];
-        double[] goodResult = new double[initSize];
-        Random random = new Random(seed);
-        SelectionSort selectionSort = new SelectionSort();
-        selectionSort.sort(goodResult);
-        for (int i = 0; i < initSize; i++) {
-            nums[i] = random.nextDouble();
-        }
+        int initValue = 100;
+        double[] nums = new double[initValue];
+        double[] goodResult = new double[initValue];
+        makeRandomNumbers(nums, initValue);
+        makeRandomNumbers(goodResult, initValue);
+        Arrays.sort(goodResult);
 
         //when
-        quickSort.sort(nums);
+        insertionSort.sort(nums);
 
         //then
         assertArrayEquals(nums, goodResult, 1);
+    }
+
+    private void makeRandomNumbers(double[] data, int howManyNumbers) {
+        int seed = 1;
+        Random random = new Random(seed);
+        for (int i = 0; i < howManyNumbers; i++) {
+            data[i] = random.nextDouble();
+        }
     }
 }

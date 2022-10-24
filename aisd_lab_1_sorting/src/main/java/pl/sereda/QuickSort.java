@@ -1,6 +1,6 @@
-package pl.edu.pw.ee;
+package pl.sereda;
 
-import pl.edu.pw.ee.services.Sorting;
+import pl.sereda.services.Sorting;
 
 import java.util.ArrayList;
 import java.util.List;

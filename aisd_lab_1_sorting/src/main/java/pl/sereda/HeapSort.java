@@ -1,9 +1,9 @@
-package pl.edu.pw.ee;
+package pl.sereda;
 
 import java.util.ArrayList;
 import java.util.List;
-import pl.edu.pw.ee.services.HeapExtension;
-import pl.edu.pw.ee.services.Sorting;
+import pl.sereda.services.HeapExtension;
+import pl.sereda.services.Sorting;
 
 public class HeapSort implements Sorting {
 
