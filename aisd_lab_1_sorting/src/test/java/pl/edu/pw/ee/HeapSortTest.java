@@ -1,40 +1,46 @@
 package pl.edu.pw.ee;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.Random;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
-public class SelectionSortTest {
+public class HeapSortTest {
 
-    SelectionSort selectionSort;
+    private static HeapSort heapSort;
+    private static RefAlgorithm refAlgorithm;
+
+    @BeforeClass
+    public static void setUpClass() {
+        refAlgorithm = new RefAlgorithm();
+    }
 
     @Before
-    public void setUp() {
-        selectionSort = new SelectionSort();
+    public void setUpBeforeTests() {
+        heapSort = new HeapSort();
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void parametersNullCheck() {
 
         //when
-        selectionSort.sort(null);
+        heapSort.sort(null);
 
         //then
         assert false;
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void emptyArrayTest() {
 
         //given
         double[] nums = new double[0];
 
         //when
-        selectionSort.sort(nums);
+        heapSort.sort(nums);
 
         //then
         assert false;
@@ -50,27 +56,10 @@ public class SelectionSortTest {
         goodResult[0] = 1;
 
         //when
-        selectionSort.sort(nums);
+        heapSort.sort(nums);
 
         //then
-        assertArrayEquals(nums, goodResult, 0);
-    }
-
-    @Test
-    public void notAllDeclaredArrayContainsNumbers() {
-
-        //given
-        double[] nums = new double[5];
-        nums[0] = 1;
-        nums[1] = 2;
-        nums[3] = 4;
-        double[] goodResult = new double[]{0, 0, 1, 2, 4};
-
-        //when
-        selectionSort.sort(nums);
-
-        //then
-        assertArrayEquals(nums, goodResult, 0);
+        assertArrayEquals(goodResult, nums, 0);
     }
 
     @Test
@@ -81,10 +70,10 @@ public class SelectionSortTest {
         double[] goodResult = new double[]{1, 2, 3, 4, 5};
 
         //when
-        selectionSort.sort(nums);
+        heapSort.sort(nums);
 
         //then
-        assertArrayEquals(nums, goodResult, 0);
+        assertArrayEquals(goodResult, nums, 0);
     }
 
     @Test
@@ -95,10 +84,10 @@ public class SelectionSortTest {
         double[] goodResult = new double[]{1, 2, 3, 4, 5};
 
         //when
-        selectionSort.sort(nums);
+        heapSort.sort(nums);
 
         //then
-        assertArrayEquals(nums, goodResult, 0);
+        assertArrayEquals(goodResult, nums, 0);
     }
 
     @Test
@@ -109,24 +98,10 @@ public class SelectionSortTest {
         double[] goodResult = new double[]{5, 5, 5, 5, 5};
 
         //when
-        selectionSort.sort(nums);
+        heapSort.sort(nums);
 
         //then
-        assertArrayEquals(nums, goodResult, 0);
-    }
-
-    @Test
-    public void arrayInitializedButWithOutNumbersTest() {
-
-        //given
-        double[] nums = new double[3];
-        double[] goodResult = new double[]{0, 0, 0};
-
-        //when
-        selectionSort.sort(nums);
-
-        //then
-        assertArrayEquals(nums, goodResult, 0);
+        assertArrayEquals(goodResult, nums, 0);
     }
 
     @Test
@@ -137,7 +112,7 @@ public class SelectionSortTest {
         double[] goodResult = new double[]{-100.1, -69.69, -53.322, -1.23, 0.002, 3.21};
 
         //when
-        selectionSort.sort(nums);
+        heapSort.sort(nums);
 
         //then
         assertArrayEquals(nums, goodResult, 0);
@@ -147,18 +122,18 @@ public class SelectionSortTest {
     public void randomWithSeedTest() {
 
         //given
-        int initSize = 100;
-        double[] nums = new double[initSize];
-        double[] goodResult = new double[initSize];
-        makeRandomNumbers(nums, initSize);
-        makeRandomNumbers(goodResult, initSize);
-        Arrays.sort(goodResult);
+        int initValue = 1000;
+        double[] nums = new double[initValue];
+        double[] goodResult = new double[initValue];
+        makeRandomNumbers(nums, initValue);
+        makeRandomNumbers(goodResult, initValue);
+        refAlgorithm.sort(goodResult);
 
         //when
-        selectionSort.sort(nums);
+        heapSort.sort(nums);
 
         //then
-        assertArrayEquals(nums, goodResult, 1);
+        assertArrayEquals(goodResult, nums, 0);
     }
 
     private void makeRandomNumbers(double[] data, int howManyNumbers) {

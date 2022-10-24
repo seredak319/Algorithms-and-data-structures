@@ -19,11 +19,8 @@ public class QuickSortTest {
     @Test(expected = IllegalArgumentException.class)
     public void parametersNullCheck() {
 
-        //given
-        double[] nums = null;
-
         //when
-        quickSort.sort(nums);
+        quickSort.sort(null);
 
         //then
         assert false;
@@ -123,6 +120,20 @@ public class QuickSortTest {
         //given
         double[] nums = new double[]{5, 5, 5, 5, 5};
         double[] goodResult = new double[]{5, 5, 5, 5, 5};
+
+        //when
+        quickSort.sort(nums);
+
+        //then
+        assertArrayEquals(nums, goodResult, 0);
+    }
+
+    @Test
+    public void arrayWithNegativeDoubleNumbers() {
+
+        //given
+        double[] nums = new double[]{-1.23, 3.21, -53.322, 0.002, -69.69, -100.1};
+        double[] goodResult = new double[]{-100.1, -69.69, -53.322, -1.23, 0.002, 3.21};
 
         //when
         quickSort.sort(nums);
