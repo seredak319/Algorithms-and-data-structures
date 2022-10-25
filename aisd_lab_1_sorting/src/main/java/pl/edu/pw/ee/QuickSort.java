@@ -12,7 +12,6 @@ public class QuickSort implements Sorting {
         if (nums == null) {
             throw new IllegalArgumentException("Nums array cannot be null");
         }
-
         if (nums.length == 0) {
             throw new IllegalArgumentException("Nums have to contains number");
         }
