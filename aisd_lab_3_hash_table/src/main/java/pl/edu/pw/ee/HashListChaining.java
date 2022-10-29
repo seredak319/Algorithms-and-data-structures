@@ -2,80 +2,112 @@ package pl.edu.pw.ee;
 
 import pl.edu.pw.ee.services.HashTable;
 
-public class HashListChaining implements HashTable {
+import java.util.NoSuchElementException;
 
-    private final Elem nil = null;
-    private Elem[] hashElems;
+public class HashListChaining<T extends Comparable<T>> implements HashTable<T> {
+
+    private final Elem<T> nil = null;
+    private final Elem<T>[] hashElems;
     private int nElem;
 
-    private class Elem {
+    private static class Elem<T> {
 
-        private Object value;
-        private Elem next;
+        private T value;
+        private Elem<T> next;
 
-        Elem(Object value, Elem nextElem) {
+        Elem(T value, Elem<T> nextElem) {
             this.value = value;
             this.next = nextElem;
         }
     }
 
     public HashListChaining(int size) {
+        if (size <= -1) {
+            throw new NegativeArraySizeException("Wartość inicjalizacji powinna być nieujemna");
+        }
+        if (size == 0) {
+            throw new ArithmeticException("Wielkość HashList powinna być dodatnia");
+        }
+
         hashElems = new Elem[size];
         initializeHash();
     }
 
     @Override
-    public void add(Object value) {
+    public void add(T value) {
+        if (value == null) {
+            throw new NullPointerException("Dodawana wartość nie może być pusta");
+        }
+
         int hashCode = value.hashCode();
         int hashId = countHashId(hashCode);
 
-        Elem oldElem = hashElems[hashId];
-        while (oldElem != nil && !oldElem.equals(value)) {
+        Elem<T> oldElem = hashElems[hashId];
+        while (oldElem != nil && !oldElem.value.equals(value)) {
             oldElem = oldElem.next;
         }
         if (oldElem != nil) {
             oldElem.value = value;
         } else {
-            hashElems[hashId] = new Elem(value, hashElems[hashId]);
+            hashElems[hashId] = new Elem<>(value, hashElems[hashId]);
             nElem++;
         }
     }
 
     @Override
-    public Object get(Object value) {
+    public T get(T value) {
+        if (value == null) {
+            throw new NullPointerException("Pobierana wartość nie może być pusta");
+        }
+
         int hashCode = value.hashCode();
         int hashId = countHashId(hashCode);
 
-        Elem elem = hashElems[hashId];
+        Elem<T> elem = hashElems[hashId];
 
         while (elem != nil && !elem.value.equals(value)) {
             elem = elem.next;
         }
 
-        return elem != nil ? elem.value : nil;
+        return elem != nil ? elem.value : (T) nil;
     }
 
     @Override
-    public void delete(Object value) {
+    public void delete(T value) {
+        if (value == null) {
+            throw new NullPointerException("Usuwana wartość nie może być pusta");
+        }
+
         int hashCode = value.hashCode();
         int hashId = countHashId(hashCode);
 
-        Elem elem = hashElems[hashId];
-        Elem elemTempFirst = elem;
+        Elem<T> elem = hashElems[hashId];
+        Elem<T> elemPrev = elem;
 
-        while (elem != nil && !elem.value.equals(value)) {
+        if (elem == null) {
+            throw new NoSuchElementException("Nie ma takiego elementu do usuniecia");
+        }
+
+        while (elem != nil) {
+            if (elem.value.equals(value) && elem.equals(elemPrev)) {
+                hashElems[hashId] = elem.next;
+                nElem--;
+                return;
+            } else if (elem.value.equals(value)) {
+                elemPrev.next = elem.next;
+                nElem--;
+                return;
+            }
+
+            elemPrev = elem;
             elem = elem.next;
         }
 
-        if (elem.next == nil) {
-            elem = nil;
-        } else {
-            while (elemTempFirst.next.value.equals(elem)) {
-                elemTempFirst = elemTempFirst.next;
-            }
-            elem = nil;
+        if (elem == null) {
+            throw new NoSuchElementException("Nie ma takiego elementu do usuniecia");
         }
 
+        elem = nil;
     }
 
     public double countLoadFactor() {

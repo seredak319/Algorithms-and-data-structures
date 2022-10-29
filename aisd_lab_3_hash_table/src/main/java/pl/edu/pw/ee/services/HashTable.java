@@ -1,10 +1,10 @@
 package pl.edu.pw.ee.services;
 
-public interface HashTable {
+public interface HashTable<T extends Comparable<T>> {
 
-    void add(Object value);
+    void add(T value);
 
-    Object get(Object value);
-    
-    void delete(Object value);
+    T get(T value);
+
+    void delete(T value);
 }
