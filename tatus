@@ -1,0 +1,54 @@
+[33mcommit e86251529d7dc123b8846f98f1d0d289027df2e3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;33mtag: LAB_2_FINAL[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Krystian Sereda <ksereda773@gmail.com>
+Date:   Sat Oct 29 18:23:08 2022 +0200
+
+    Hash, dodanie testow, poprawa kodu, testy wydajnosciowe
+
+[33mcommit b0b0206768e28e27496d98d118398a754c2a7520[m[33m ([m[1;33mtag: LAB_2[m[33m)[m
+Merge: 8cf18fe 99ae8e4
+Author: seredak <seredak@P10.iem.pw.edu.pl>
+Date:   Tue Oct 25 17:53:10 2022 +0200
+
+    Merge branch 'master' of https://projektor.ee.pw.edu.pl/repo/git/2022Z_AISD_git_lab_GR5___gr13
+
+[33mcommit 8cf18fed9c2ba99c3c5c5aaef834164cfdc727c8[m
+Author: seredak <seredak@P10.iem.pw.edu.pl>
+Date:   Tue Oct 25 17:52:48 2022 +0200
+
+     dodanie plikow
+
+[33mcommit 99ae8e4a7078f2a2c6262e20aa009a48d50b823c[m[33m ([m[1;33mtag: LAB_1_FINAL[m[33m)[m
+Author: Krystian Sereda <ksereda773@gmail.com>
+Date:   Mon Oct 24 18:03:18 2022 +0200
+
+    Wykonanie zadania, testy + testy wydajnosciowe
+
+[33mcommit 01e79b36a609738d04d8301636b29f6636421e9e[m
+Author: seredak <seredak@P10.iem.pw.edu.pl>
+Date:   Tue Oct 18 17:59:02 2022 +0200
+
+    zajecia 18.10.2022q
+
+[33mcommit c47573ea3eb971392eca6ae1bb209c24b70b7254[m[33m ([m[1;33mtag: LAB_1_1_HW[m[33m)[m
+Author: Krystian Sereda <ksereda773@gmail.com>
+Date:   Thu Oct 13 22:20:13 2022 +0200
+
+    Poprawienie quicksorta, dodanie insertionsorta oraz testow
+
+[33mcommit 7d492bef1d8698f66f4d0970a5efce6d2dcbc2d8[m[33m ([m[1;33mtag: LAB_1_1[m[33m)[m
+Author: seredak <seredak@P10.iem.pw.edu.pl>
+Date:   Tue Oct 11 18:04:49 2022 +0200
+
+    Dodanie reszty plikow
+
+[33mcommit c43ec1999da70b739187be70c232811bafc30d80[m
+Author: seredak <seredak@P10.iem.pw.edu.pl>
+Date:   Tue Oct 11 17:57:51 2022 +0200
+
+    LAB_1_1
+
+[33mcommit 0317f16720f11dba5c71ff0805a90a7e9ed99e5a[m
+Author: System Projektor <eeforge@gmail.com>
+Date:   Tue Oct 11 16:36:41 2022 +0200
+
+    Utworzenie repozytorium
