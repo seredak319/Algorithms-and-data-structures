@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
 
 import static org.junit.Assert.assertEquals;
 
-public class HashLinearProbingTest {
+public class HashDoubleHashingTest {
 
     private final double delta = 0.01;
 
@@ -23,7 +23,7 @@ public class HashLinearProbingTest {
         int initialSize = 0;
 
         // when
-        HashTable<Double> unusedHash = new HashLinearProbing<>(initialSize);
+        HashTable<Double> unusedHash = new HashDoubleHashing<>(initialSize);
 
         // then
         assert false;
@@ -32,7 +32,7 @@ public class HashLinearProbingTest {
     @Test
     public void should_CorrectlyAddNewElems_WhenNotExistInHashTable() {
         // given
-        HashTable<String> emptyHash = new HashLinearProbing<>();
+        HashTable<String> emptyHash = new HashDoubleHashing<>();
         String newEleme = "nothing special";
 
         // when
@@ -48,7 +48,7 @@ public class HashLinearProbingTest {
     @Test(expected = IllegalArgumentException.class)
     public void put_NullValueTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(3);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>();
 
         //when
         emptyHash.put(null);
@@ -60,7 +60,7 @@ public class HashLinearProbingTest {
     @Test
     public void put_TheSameValueTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(3);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>();
 
         //when
         emptyHash.put(1);
@@ -75,9 +75,9 @@ public class HashLinearProbingTest {
     }
 
     @Test
-    public void put_TheSameValueManyElementsTest(){
+    public void put_TheSameValueManyElements_PrimeNumberSizeTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(11);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(11);
 
         //when
         emptyHash.put(0);
@@ -85,7 +85,6 @@ public class HashLinearProbingTest {
         emptyHash.put(2);
         emptyHash.put(3);
         emptyHash.put(4);
-
         emptyHash.put(3);
         emptyHash.put(4);
         emptyHash.put(3);
@@ -96,13 +95,33 @@ public class HashLinearProbingTest {
     }
 
     @Test
-    public void put_TheSameHashCodeTest(){
+    public void put_TheSameValueManyElements_PowerOfTwoSizeTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(3);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(2);
+
+        //when
+        emptyHash.put(0);
+        emptyHash.put(1);
+        emptyHash.put(2);
+        emptyHash.put(3);
+        emptyHash.put(4);
+        emptyHash.put(3);
+        emptyHash.put(4);
+        emptyHash.put(3);
+        int nOfElemsAfterPut = getNumOfElems(emptyHash);
+
+        //then
+        assertEquals(5,nOfElemsAfterPut);
+    }
+
+    @Test
+    public void put_TheSameHashCode_PrimeNumberSizeTest(){
+        //given
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(5);
 
         //when
         emptyHash.put(1);
-        emptyHash.put(4);
+        emptyHash.put(6);
         int nOfElemsAfterPut = getNumOfElems(emptyHash);
 
         //then
@@ -110,9 +129,9 @@ public class HashLinearProbingTest {
     }
 
     @Test
-    public void put_HashingWithIntegersAtBorderTest(){
+    public void put_TheSameHashCode_PowerOfTwoTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(3);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(2);
 
         //when
         emptyHash.put(1);
@@ -126,7 +145,7 @@ public class HashLinearProbingTest {
     @Test
     public void put_CheckIfHashSizeIsDoublingCorrectlyTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(3);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(1);
 
         //when
         emptyHash.put(2);
@@ -144,7 +163,7 @@ public class HashLinearProbingTest {
     @Test (expected = IllegalArgumentException.class)
     public void get_NullValueTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(3);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(5);
 
         //when
         emptyHash.put(1);
@@ -158,7 +177,7 @@ public class HashLinearProbingTest {
     @Test (expected = NoSuchElementException.class)
     public void get_UnreachableValueTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(3);
+        HashTable<Integer> emptyHash = new HashQuadraticProbing<>(4,0.5,0.5);
 
         //when
         emptyHash.put(1);
@@ -170,9 +189,9 @@ public class HashLinearProbingTest {
     }
 
     @Test
-    public void get_TheSameHashCodeTest(){
+    public void get_TheSameHashCode_PrimeNumberSizeTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(13);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(13);
 
         //when
         emptyHash.put(13);
@@ -187,9 +206,26 @@ public class HashLinearProbingTest {
     }
 
     @Test
+    public void get_TheSameHashCode_PowerOfTwoTest(){
+        //given
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(16);
+
+        //when
+        emptyHash.put(16);
+        emptyHash.put(32);
+        emptyHash.put(48);
+        emptyHash.put(64);
+
+        //then
+        assertEquals(64,emptyHash.get(64),delta);
+        assertEquals(32,emptyHash.get(32),delta);
+        assertEquals(48,emptyHash.get(48),delta);
+    }
+
+    @Test
     public void get_AfterResizingTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(1);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(1);
 
         //when
         emptyHash.put(0);
@@ -207,7 +243,7 @@ public class HashLinearProbingTest {
     @Test (expected = IllegalArgumentException.class)
     public void delete_NullValueTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(3);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>();
 
         //when
         emptyHash.put(0);
@@ -217,7 +253,7 @@ public class HashLinearProbingTest {
     @Test
     public void delete_ExistingValueTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(3);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>();
 
         //when
         emptyHash.put(0);
@@ -233,7 +269,7 @@ public class HashLinearProbingTest {
     @Test
     public void delete_ExistingValueAfterResizeTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(3);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(1);
 
         //when
         emptyHash.put(0);
@@ -250,7 +286,7 @@ public class HashLinearProbingTest {
     @Test
     public void delete_ExistingValueWithTheSameHash_NumberOfElementsTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(11);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(11);
 
         //when
         emptyHash.put(0);
@@ -268,7 +304,7 @@ public class HashLinearProbingTest {
     @Test (expected = NoSuchElementException.class)
     public void delete_ExistingValueWithTheSameHash_GetElementAfterDeletingTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(11);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(11);
 
         //when
         emptyHash.put(0);
@@ -285,7 +321,7 @@ public class HashLinearProbingTest {
     @Test
     public void delete_ExistingValueWithTheSameHash_ElementBetweenThemWasDeletedTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(11);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(11);
         Integer result;
 
         //when
@@ -303,7 +339,7 @@ public class HashLinearProbingTest {
     @Test
     public void delete_DeletingAndPuttingTheSameValueTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(11);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(11);
         Integer result;
 
         //when
@@ -324,7 +360,7 @@ public class HashLinearProbingTest {
     @Test
     public void delete_DeletingAndPuttingTheSameHash_DEL_MARK_NumberOfElementsTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(11);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(11);
         Integer result;
 
         //when
@@ -347,7 +383,7 @@ public class HashLinearProbingTest {
     @Test
     public void delete_DeletingAndPuttingTheSameHash_PutElementInDEL_MARK_Test(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(11);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(11);
         Integer result;
 
         //when
@@ -370,12 +406,12 @@ public class HashLinearProbingTest {
     @Test (expected = NoSuchElementException.class)
     public void delete_ValueWitchDoesNotExistTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(11);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(5);
 
         //when
         emptyHash.put(0);
-        emptyHash.put(11);
-        emptyHash.put(22);
+        emptyHash.put(5);
+        emptyHash.put(10);
         emptyHash.put(33);
         emptyHash.delete(2137);
 
@@ -386,16 +422,43 @@ public class HashLinearProbingTest {
     @Test (expected = NoSuchElementException.class)
     public void delete_EmptyHashTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(11);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(11);
 
         //when
         emptyHash.delete(11);
     }
 
     @Test
-    public void delete_ValuesWithTheSameHashCode_NumberOfElementsTest(){
+    public void delete_ValuesWithTheSameHashCode_NumberOfElements_PowerOfTwoSizeTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(11);
+        HashTable<Integer> emptyHash = new HashDoubleHashing<>(16);
+
+        //when
+        emptyHash.put(16);
+        emptyHash.put(32);
+        emptyHash.put(64);
+        emptyHash.put(128);
+        emptyHash.put(256);
+        emptyHash.put(512);
+        emptyHash.put(1024);
+        emptyHash.delete(16);
+        emptyHash.delete(64);
+        emptyHash.delete(1024);
+        emptyHash.delete(128);
+        emptyHash.delete(256);
+        emptyHash.delete(32);
+        emptyHash.delete(512);
+
+        int nOfElemsAfterDeletes = getNumOfElems(emptyHash);
+
+        //then
+        assertEquals(0,nOfElemsAfterDeletes);
+    }
+
+    @Test
+    public void delete_ValuesWithTheSameHashCode_NumberOfElements_PrimeSizeTest(){
+        //given
+        HashTable<Integer> emptyHash = new HashQuadraticProbing<>(11,2137,2137);
 
         //when
         emptyHash.put(0);
@@ -421,7 +484,7 @@ public class HashLinearProbingTest {
     @Test
     public void delete_ValuesWithTheSameHashCodeAfterResize_NumberOfElementsTest(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(5);
+        HashTable<Integer> emptyHash = new HashQuadraticProbing<>(5,5,2);
 
         //when
         emptyHash.put(0);
@@ -441,7 +504,7 @@ public class HashLinearProbingTest {
     @Test
     public void putGetDelete_StandardHashTableSize_100kStringsTest(){
         //given
-        HashTable<String> hashTable = new HashLinearProbing<>();
+        HashTable<String> hashTable = new HashQuadraticProbing<>();
         String[] words = prepareWords();
 
         //when
@@ -463,7 +526,7 @@ public class HashLinearProbingTest {
     @Test
     public void resize_ResizeDoesNotPutDEL_MARK_Test(){
         //given
-        HashTable<Integer> emptyHash = new HashLinearProbing<>(5);
+        HashTable<Integer> emptyHash = new HashQuadraticProbing<>(5,5,2);
 
         //when
         emptyHash.put(0);
@@ -504,6 +567,7 @@ public class HashLinearProbingTest {
         int maxNumWords = 100_000;
         try (FileReader fReader = new FileReader(WORDS_FILEPATH);
              BufferedReader buffReader = new BufferedReader(fReader)) {
+
             while ((line = buffReader.readLine()) != null && counter < maxNumWords) {
                 words.add(line);
                 counter++;

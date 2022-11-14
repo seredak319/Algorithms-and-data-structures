@@ -17,7 +17,6 @@ public class HashLinearProbing<T extends Comparable<T>> extends HashOpenAdressin
         int hash = (key % m + i) % m;
 
         hash = hash < 0 ? -hash : hash;
-
         return hash;
     }
 }

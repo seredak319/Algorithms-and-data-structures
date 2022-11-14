@@ -2,11 +2,32 @@ package pl.edu.pw.ee;
 
 public class HashDoubleHashing<T extends Comparable<T>> extends HashOpenAdressing<T> {
 
-    @Override
-    int hashFunc(int key, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public HashDoubleHashing() {
+        super();
     }
 
-    // TODO
+    public HashDoubleHashing(int size) {
+        super(size);
+        if(size == 3){
+            throw new IllegalArgumentException("Double hashing hash does not allow number three as a size.");
+        }
+    }
 
+    @Override
+    int hashFunc(int key, int i) {
+        int m = getSize();
+
+        int hash = (f(key,m) + i*g(key,m)) % m;
+
+        hash = hash < 0 ? -hash : hash;
+        return hash;
+    }
+
+    private int f(int k, int m){
+        return k % m;
+    }
+
+    private int g(int k, int m){
+        return 1 + (k % (m-3));
+    }
 }
