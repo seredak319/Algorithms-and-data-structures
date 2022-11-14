@@ -63,6 +63,10 @@ public abstract class HashOpenAdressing<T extends Comparable<T>> implements Hash
 
     @Override
     public T get(T elem) {
+        if(nElems < 1){
+            throw new NoSuchElementException();
+        }
+        int counter = 0;
         validateInputElem(elem);
 
         int key = elem.hashCode();
@@ -70,11 +74,15 @@ public abstract class HashOpenAdressing<T extends Comparable<T>> implements Hash
         int hashId = hashFunc(key, i);
 
         while (hashElems[hashId] != nil) {
+            counter++;
             if(elem.equals(hashElems[hashId])){
                 return hashElems[hashId];
             }
             i = (i + 1) % size;
             hashId = hashFunc(key, i);
+            if(counter > hashElems.length){
+                break;
+            }
         }
         throw new NoSuchElementException();
     }
@@ -85,11 +93,12 @@ public abstract class HashOpenAdressing<T extends Comparable<T>> implements Hash
         if(nElems < 1){
             throw new NoSuchElementException();
         }
-
+        int counter = 0;
         int key = elem.hashCode();
         int i = 0;
         int hashId = hashFunc(key, i);
         while (hashElems[hashId] != nil) {
+            counter++;
             if(elem.equals(hashElems[hashId])){
                 hashElems[hashId] = (T) DEL_MARK;
                 nElems--;
@@ -97,6 +106,9 @@ public abstract class HashOpenAdressing<T extends Comparable<T>> implements Hash
             }
             i = (i + 1) % size;
             hashId = hashFunc(key, i);
+            if(counter > hashElems.length){
+                break;
+            }
         }
         throw new NoSuchElementException();
     }
