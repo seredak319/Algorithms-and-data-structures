@@ -1,21 +1,21 @@
-package pl.edu.pw.ee;
+package pl.sereda;
 
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Random;
 
-public class QuickSortPerformanceTest {
+public class RefAlgorithmPerformanceTest {
 
-    private QuickSort quickSort;
+    private static RefAlgorithm refAlgorithm;
 
-    @Before
-    public void setUpClass() {
-        quickSort = new QuickSort();
+    @BeforeClass
+    public static void setUpClass() {
+        refAlgorithm = new RefAlgorithm();
     }
 
     @Test
-    public void quickSortPerformanceConduciveNumbers() {
+    public void refAlgorithmPerformanceConduciveNumbers() {
 
         //given
         int maxNumber = 25000;
@@ -31,9 +31,9 @@ public class QuickSortPerformanceTest {
         for (int i = startingNumber; i <= maxNumber; i += numbersDelay) {
             time = 0;
             for (int j = 0; j < howManyTests; j++) {
-                nums = getConduciveNumbersQuickSort(i);
+                nums = getConduciveNumbersRefAlgorithm(i);
                 start = System.nanoTime();
-                quickSort.sort(nums);
+                refAlgorithm.sort(nums);
                 finish = System.nanoTime();
                 time += finish - start;
             }
@@ -55,7 +55,7 @@ public class QuickSortPerformanceTest {
     }
 
     @Test
-    public void quickSortPerformanceUnfavorableNumbers() {
+    public void refAlgorithmPerformanceUnfavorableNumbers() {
 
         //given
         int maxNumber = 25000;
@@ -71,9 +71,9 @@ public class QuickSortPerformanceTest {
         for (int i = startingNumber; i <= maxNumber; i += numbersDelay) {
             time = 0;
             for (int j = 0; j < howManyTests; j++) {
-                nums = getUnfavorableNumbersQuickSort(i);
+                nums = getUnfavorableNumbersRefAlgorithm(i);
                 start = System.nanoTime();
-                quickSort.sort(nums);
+                refAlgorithm.sort(nums);
                 finish = System.nanoTime();
                 time += finish - start;
             }
@@ -95,7 +95,7 @@ public class QuickSortPerformanceTest {
     }
 
     @Test
-    public void quickSortPerformanceRandomNumbers() {
+    public void refAlgorithmPerformanceRandomNumbers() {
 
         //given
         int maxNumber = 25000;
@@ -113,11 +113,11 @@ public class QuickSortPerformanceTest {
             for (int j = 0; j < howManyTests; j++) {
                 nums = getRandomNumbers(i);
                 start = System.nanoTime();
-                quickSort.sort(nums);
+                refAlgorithm.sort(nums);
                 finish = System.nanoTime();
                 time += finish - start;
             }
-            System.out.println(" " + time / howManyTests);
+            System.out.println(" "+i + "  " + time / howManyTests);
 
             if (i == 100) {
                 numbersDelay = 10;
@@ -134,37 +134,18 @@ public class QuickSortPerformanceTest {
         }
     }
 
-    public double[] getConduciveNumbersQuickSort(int howManyNumbers) {
-        double[] nums = new double[howManyNumbers];
-        setMiddleValueMax(nums, 0, howManyNumbers - 1, howManyNumbers, howManyNumbers);
-        return nums;
-    }
-
-    private int setMiddleValueMax(double[] nums, int left, int right, int value, int howManyNumbers) {
-
-        if (howManyNumbers == 1) {
-            nums[left] = value--;
-            return value;
-        }
-        if (howManyNumbers == 2) {
-            nums[right] = value--;
-            nums[left] = value--;
-            return value;
-        }
-
-        int p = howManyNumbers / 2;
-        p += left;
-        nums[p] = value--;
-        value = setMiddleValueMax(nums, left, p - 1, value, p - left);
-        value = setMiddleValueMax(nums, p + 1, right, value, right - p);
-
-        return value;
-    }
-
-    private double[] getUnfavorableNumbersQuickSort(int howManyNumbers) {
+    private double[] getConduciveNumbersRefAlgorithm(int howManyNumbers) {
         double[] nums = new double[howManyNumbers];
         for (int i = 0; i < howManyNumbers; i++) {
             nums[i] = i + .0;
+        }
+        return nums;
+    }
+
+    private double[] getUnfavorableNumbersRefAlgorithm(int howManyNumbers) {
+        double[] nums = new double[howManyNumbers];
+        for (int i = 0; i < howManyNumbers; i++) {
+            nums[i] = howManyNumbers - i + .0;
         }
         return nums;
     }

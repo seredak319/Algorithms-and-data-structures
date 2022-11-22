@@ -1,27 +1,27 @@
-package pl.edu.pw.ee;
+package pl.sereda;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Random;
 
-public class RefAlgorithmPerformanceTest {
+public class SelectionSortPerformanceTest {
 
-    private static RefAlgorithm refAlgorithm;
+    private static SelectionSort selectionSort;
 
     @BeforeClass
     public static void setUpClass() {
-        refAlgorithm = new RefAlgorithm();
+        selectionSort = new SelectionSort();
     }
 
     @Test
-    public void refAlgorithmPerformanceConduciveNumbers() {
+    public void selectionSortPerformanceConduciveNumbers() {
 
         //given
         int maxNumber = 25000;
         int startingNumber = 1;
         int numbersDelay = 1;
-        int howManyTests = 10;
+        int howManyTests = 3;
         long start;
         long finish;
         long time;
@@ -31,9 +31,9 @@ public class RefAlgorithmPerformanceTest {
         for (int i = startingNumber; i <= maxNumber; i += numbersDelay) {
             time = 0;
             for (int j = 0; j < howManyTests; j++) {
-                nums = getConduciveNumbersRefAlgorithm(i);
+                nums = getConduciveNumbersSelectionSort(i);
                 start = System.nanoTime();
-                refAlgorithm.sort(nums);
+                selectionSort.sort(nums);
                 finish = System.nanoTime();
                 time += finish - start;
             }
@@ -55,13 +55,13 @@ public class RefAlgorithmPerformanceTest {
     }
 
     @Test
-    public void refAlgorithmPerformanceUnfavorableNumbers() {
+    public void selectionSortPerformanceUnfavorableNumbers() {
 
         //given
         int maxNumber = 25000;
         int startingNumber = 1;
         int numbersDelay = 1;
-        int howManyTests = 10;
+        int howManyTests = 3;
         long start;
         long finish;
         long time;
@@ -71,9 +71,9 @@ public class RefAlgorithmPerformanceTest {
         for (int i = startingNumber; i <= maxNumber; i += numbersDelay) {
             time = 0;
             for (int j = 0; j < howManyTests; j++) {
-                nums = getUnfavorableNumbersRefAlgorithm(i);
+                nums = getUnfavorableNumbersSelectionSort(i);
                 start = System.nanoTime();
-                refAlgorithm.sort(nums);
+                selectionSort.sort(nums);
                 finish = System.nanoTime();
                 time += finish - start;
             }
@@ -95,13 +95,13 @@ public class RefAlgorithmPerformanceTest {
     }
 
     @Test
-    public void refAlgorithmPerformanceRandomNumbers() {
+    public void selectionSortPerformanceRandomNumbers() {
 
         //given
         int maxNumber = 25000;
         int startingNumber = 1;
         int numbersDelay = 1;
-        int howManyTests = 10;
+        int howManyTests = 3;
         long start;
         long finish;
         long time;
@@ -113,11 +113,11 @@ public class RefAlgorithmPerformanceTest {
             for (int j = 0; j < howManyTests; j++) {
                 nums = getRandomNumbers(i);
                 start = System.nanoTime();
-                refAlgorithm.sort(nums);
+                selectionSort.sort(nums);
                 finish = System.nanoTime();
                 time += finish - start;
             }
-            System.out.println(" "+i + "  " + time / howManyTests);
+            System.out.println(" " + time / howManyTests);
 
             if (i == 100) {
                 numbersDelay = 10;
@@ -134,7 +134,7 @@ public class RefAlgorithmPerformanceTest {
         }
     }
 
-    private double[] getConduciveNumbersRefAlgorithm(int howManyNumbers) {
+    private double[] getConduciveNumbersSelectionSort(int howManyNumbers) {
         double[] nums = new double[howManyNumbers];
         for (int i = 0; i < howManyNumbers; i++) {
             nums[i] = i + .0;
@@ -142,7 +142,7 @@ public class RefAlgorithmPerformanceTest {
         return nums;
     }
 
-    private double[] getUnfavorableNumbersRefAlgorithm(int howManyNumbers) {
+    private double[] getUnfavorableNumbersSelectionSort(int howManyNumbers) {
         double[] nums = new double[howManyNumbers];
         for (int i = 0; i < howManyNumbers; i++) {
             nums[i] = howManyNumbers - i + .0;

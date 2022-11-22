@@ -1,4 +1,4 @@
-package pl.edu.pw.ee;
+package pl.sereda;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;

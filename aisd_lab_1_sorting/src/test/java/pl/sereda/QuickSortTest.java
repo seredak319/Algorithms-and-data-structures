@@ -1,46 +1,39 @@
-package pl.edu.pw.ee;
+package pl.sereda;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Random;
 
 import static org.junit.Assert.assertArrayEquals;
 
-public class HeapSortTest {
+public class QuickSortTest {
 
-    private static HeapSort heapSort;
-    private static RefAlgorithm refAlgorithm;
-
-    @BeforeClass
-    public static void setUpClass() {
-        refAlgorithm = new RefAlgorithm();
-    }
+    QuickSort quickSort;
 
     @Before
-    public void setUpBeforeTests() {
-        heapSort = new HeapSort();
+    public void setUp() {
+        quickSort = new QuickSort();
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void parametersNullCheck() {
 
         //when
-        heapSort.sort(null);
+        quickSort.sort(null);
 
         //then
         assert false;
     }
 
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void emptyArrayTest() {
 
         //given
         double[] nums = new double[0];
 
         //when
-        heapSort.sort(nums);
+        quickSort.sort(nums);
 
         //then
         assert false;
@@ -56,10 +49,27 @@ public class HeapSortTest {
         goodResult[0] = 1;
 
         //when
-        heapSort.sort(nums);
+        quickSort.sort(nums);
 
         //then
-        assertArrayEquals(goodResult, nums, 0);
+        assertArrayEquals(nums, goodResult, 0);
+    }
+
+    @Test
+    public void notAllDeclaredArrayContainsNumbers() {
+
+        //given
+        double[] nums = new double[5];
+        nums[0] = 1;
+        nums[1] = 2;
+        nums[3] = 4;
+        double[] goodResult = new double[]{0, 0, 1, 2, 4};
+
+        //when
+        quickSort.sort(nums);
+
+        //then
+        assertArrayEquals(nums, goodResult, 0);
     }
 
     @Test
@@ -70,10 +80,24 @@ public class HeapSortTest {
         double[] goodResult = new double[]{1, 2, 3, 4, 5};
 
         //when
-        heapSort.sort(nums);
+        quickSort.sort(nums);
 
         //then
-        assertArrayEquals(goodResult, nums, 0);
+        assertArrayEquals(nums, goodResult, 0);
+    }
+
+    @Test
+    public void randomNumbersTest() {
+
+        //given
+        double[] nums = new double[]{4, 3, 8, 7, 1, 100, -21, 42, 0.42, 6, 5, 6};
+        double[] goodResult = new double[]{-21, 0.42, 1, 3, 4, 5, 6, 6, 7, 8, 42, 100};
+
+        //when
+        quickSort.sort(nums);
+
+        //then
+        assertArrayEquals(nums, goodResult, 0);
     }
 
     @Test
@@ -84,10 +108,10 @@ public class HeapSortTest {
         double[] goodResult = new double[]{1, 2, 3, 4, 5};
 
         //when
-        heapSort.sort(nums);
+        quickSort.sort(nums);
 
         //then
-        assertArrayEquals(goodResult, nums, 0);
+        assertArrayEquals(nums, goodResult, 0);
     }
 
     @Test
@@ -98,10 +122,10 @@ public class HeapSortTest {
         double[] goodResult = new double[]{5, 5, 5, 5, 5};
 
         //when
-        heapSort.sort(nums);
+        quickSort.sort(nums);
 
         //then
-        assertArrayEquals(goodResult, nums, 0);
+        assertArrayEquals(nums, goodResult, 0);
     }
 
     @Test
@@ -112,7 +136,7 @@ public class HeapSortTest {
         double[] goodResult = new double[]{-100.1, -69.69, -53.322, -1.23, 0.002, 3.21};
 
         //when
-        heapSort.sort(nums);
+        quickSort.sort(nums);
 
         //then
         assertArrayEquals(nums, goodResult, 0);
@@ -122,25 +146,21 @@ public class HeapSortTest {
     public void randomWithSeedTest() {
 
         //given
-        int initValue = 1000;
-        double[] nums = new double[initValue];
-        double[] goodResult = new double[initValue];
-        makeRandomNumbers(nums, initValue);
-        makeRandomNumbers(goodResult, initValue);
-        refAlgorithm.sort(goodResult);
+        int initSize = 100;
+        int seed = 2;
+        double[] nums = new double[initSize];
+        double[] goodResult = new double[initSize];
+        Random random = new Random(seed);
+        SelectionSort selectionSort = new SelectionSort();
+        selectionSort.sort(goodResult);
+        for (int i = 0; i < initSize; i++) {
+            nums[i] = random.nextDouble();
+        }
 
         //when
-        heapSort.sort(nums);
+        quickSort.sort(nums);
 
         //then
-        assertArrayEquals(goodResult, nums, 0);
-    }
-
-    private void makeRandomNumbers(double[] data, int howManyNumbers) {
-        int seed = 1;
-        Random random = new Random(seed);
-        for (int i = 0; i < howManyNumbers; i++) {
-            data[i] = random.nextDouble();
-        }
+        assertArrayEquals(nums, goodResult, 1);
     }
 }

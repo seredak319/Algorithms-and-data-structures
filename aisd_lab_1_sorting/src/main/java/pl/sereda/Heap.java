@@ -1,8 +1,8 @@
-package pl.edu.pw.ee;
+package pl.sereda;
 
 import java.util.List;
-import pl.edu.pw.ee.services.HeapExtension;
-import pl.edu.pw.ee.services.HeapInterface;
+import pl.sereda.services.HeapExtension;
+import pl.sereda.services.HeapInterface;
 
 public class Heap<T extends Comparable<T>> implements HeapInterface<T>, HeapExtension {
 

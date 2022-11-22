@@ -1,27 +1,27 @@
-package pl.edu.pw.ee;
+package pl.sereda;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Random;
 
-public class SelectionSortPerformanceTest {
+public class QuickSortPerformanceTest {
 
-    private static SelectionSort selectionSort;
+    private QuickSort quickSort;
 
-    @BeforeClass
-    public static void setUpClass() {
-        selectionSort = new SelectionSort();
+    @Before
+    public void setUpClass() {
+        quickSort = new QuickSort();
     }
 
     @Test
-    public void selectionSortPerformanceConduciveNumbers() {
+    public void quickSortPerformanceConduciveNumbers() {
 
         //given
         int maxNumber = 25000;
         int startingNumber = 1;
         int numbersDelay = 1;
-        int howManyTests = 3;
+        int howManyTests = 10;
         long start;
         long finish;
         long time;
@@ -31,9 +31,9 @@ public class SelectionSortPerformanceTest {
         for (int i = startingNumber; i <= maxNumber; i += numbersDelay) {
             time = 0;
             for (int j = 0; j < howManyTests; j++) {
-                nums = getConduciveNumbersSelectionSort(i);
+                nums = getConduciveNumbersQuickSort(i);
                 start = System.nanoTime();
-                selectionSort.sort(nums);
+                quickSort.sort(nums);
                 finish = System.nanoTime();
                 time += finish - start;
             }
@@ -55,13 +55,13 @@ public class SelectionSortPerformanceTest {
     }
 
     @Test
-    public void selectionSortPerformanceUnfavorableNumbers() {
+    public void quickSortPerformanceUnfavorableNumbers() {
 
         //given
         int maxNumber = 25000;
         int startingNumber = 1;
         int numbersDelay = 1;
-        int howManyTests = 3;
+        int howManyTests = 10;
         long start;
         long finish;
         long time;
@@ -71,9 +71,9 @@ public class SelectionSortPerformanceTest {
         for (int i = startingNumber; i <= maxNumber; i += numbersDelay) {
             time = 0;
             for (int j = 0; j < howManyTests; j++) {
-                nums = getUnfavorableNumbersSelectionSort(i);
+                nums = getUnfavorableNumbersQuickSort(i);
                 start = System.nanoTime();
-                selectionSort.sort(nums);
+                quickSort.sort(nums);
                 finish = System.nanoTime();
                 time += finish - start;
             }
@@ -95,13 +95,13 @@ public class SelectionSortPerformanceTest {
     }
 
     @Test
-    public void selectionSortPerformanceRandomNumbers() {
+    public void quickSortPerformanceRandomNumbers() {
 
         //given
         int maxNumber = 25000;
         int startingNumber = 1;
         int numbersDelay = 1;
-        int howManyTests = 3;
+        int howManyTests = 10;
         long start;
         long finish;
         long time;
@@ -113,7 +113,7 @@ public class SelectionSortPerformanceTest {
             for (int j = 0; j < howManyTests; j++) {
                 nums = getRandomNumbers(i);
                 start = System.nanoTime();
-                selectionSort.sort(nums);
+                quickSort.sort(nums);
                 finish = System.nanoTime();
                 time += finish - start;
             }
@@ -134,18 +134,37 @@ public class SelectionSortPerformanceTest {
         }
     }
 
-    private double[] getConduciveNumbersSelectionSort(int howManyNumbers) {
+    public double[] getConduciveNumbersQuickSort(int howManyNumbers) {
         double[] nums = new double[howManyNumbers];
-        for (int i = 0; i < howManyNumbers; i++) {
-            nums[i] = i + .0;
-        }
+        setMiddleValueMax(nums, 0, howManyNumbers - 1, howManyNumbers, howManyNumbers);
         return nums;
     }
 
-    private double[] getUnfavorableNumbersSelectionSort(int howManyNumbers) {
+    private int setMiddleValueMax(double[] nums, int left, int right, int value, int howManyNumbers) {
+
+        if (howManyNumbers == 1) {
+            nums[left] = value--;
+            return value;
+        }
+        if (howManyNumbers == 2) {
+            nums[right] = value--;
+            nums[left] = value--;
+            return value;
+        }
+
+        int p = howManyNumbers / 2;
+        p += left;
+        nums[p] = value--;
+        value = setMiddleValueMax(nums, left, p - 1, value, p - left);
+        value = setMiddleValueMax(nums, p + 1, right, value, right - p);
+
+        return value;
+    }
+
+    private double[] getUnfavorableNumbersQuickSort(int howManyNumbers) {
         double[] nums = new double[howManyNumbers];
         for (int i = 0; i < howManyNumbers; i++) {
-            nums[i] = howManyNumbers - i + .0;
+            nums[i] = i + .0;
         }
         return nums;
     }
