@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: pl.edu.pw.ee.LongestCommonSubsequenceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.027 s <<< FAILURE! - in pl.edu.pw.ee.LongestCommonSubsequenceTest
+LCS_test  Time elapsed: 0.022 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<KS[N]AK> but was:<KS[Ñ]AK>
+	at pl.edu.pw.ee.LongestCommonSubsequenceTest.LCS_test(LongestCommonSubsequenceTest.java:17)
+
