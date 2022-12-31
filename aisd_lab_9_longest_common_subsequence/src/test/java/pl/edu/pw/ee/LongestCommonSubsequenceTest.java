@@ -4,11 +4,10 @@ import org.junit.Assert;
 
 import org.junit.Test;
 
-public class LongestCommonSubsequenceTest 
-{
+public class LongestCommonSubsequenceTest {
 
-    @Test (expected = NullPointerException.class)
-    public void should_ThrowException_WhenDisplayUsedBefore_DisplayMethod(){
+    @Test(expected = NullPointerException.class)
+    public void should_ThrowException_WhenDisplayUsedBefore_DisplayMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence("JAN", "FRANCISZKAŃSKA");
 
@@ -20,7 +19,7 @@ public class LongestCommonSubsequenceTest
     }
 
     @Test
-    public void should_ReturnEmptyString_WhenOneOfTheStringsIsNull_FindLCSMethod(){
+    public void should_ReturnEmptyString_WhenOneOfTheStringsIsNull_FindLCSMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence(null, "FRANCISZKAŃSKA");
 
@@ -28,11 +27,11 @@ public class LongestCommonSubsequenceTest
         String substringResult = lcs.findLCS();
 
         //then
-        Assert.assertEquals("",substringResult);
+        Assert.assertEquals("", substringResult);
     }
-    
+
     @Test
-    public void should_CorrectlyFind_WhenAverageStrings_FindLCSMethod(){
+    public void should_CorrectlyFind_WhenAverageStrings_FindLCSMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence("WATYKAŃSKI", "FRANCISZKAŃSKA");
 
@@ -44,7 +43,7 @@ public class LongestCommonSubsequenceTest
     }
 
     @Test
-    public void should_DoNothing_WhenStringIsNull_DisplayMethod(){
+    public void should_DoNothing_WhenStringIsNull_DisplayMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence(null, "FRANCISZKAŃSKA");
 
@@ -56,7 +55,7 @@ public class LongestCommonSubsequenceTest
     }
 
     @Test
-    public void should_DoNotThrowErrorOrException_WhenStringIsEmpty_DisplayMethod(){
+    public void should_DoNotThrowErrorOrException_WhenStringIsEmpty_DisplayMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence("", "FRANCISZKAŃSKA");
 
@@ -64,12 +63,12 @@ public class LongestCommonSubsequenceTest
         String substringResult = lcs.findLCS();
 
         //then
-        Assert.assertEquals("",substringResult);
+        Assert.assertEquals("", substringResult);
         lcs.display();
     }
 
     @Test
-    public void should_DoNotThrowErrorOrException_WhenBothStringsAreEmpty_DisplayMethod(){
+    public void should_DoNotThrowErrorOrException_WhenBothStringsAreEmpty_DisplayMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence("", "");
 
@@ -81,7 +80,7 @@ public class LongestCommonSubsequenceTest
     }
 
     @Test
-    public void should_CorrectlyFindLCS_WhenOneLetterString_TheSame_FindLCSMethod(){
+    public void should_CorrectlyFindLCS_WhenOneLetterString_TheSame_FindLCSMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence("A", "A");
 
@@ -89,12 +88,12 @@ public class LongestCommonSubsequenceTest
         String substringResult = lcs.findLCS();
 
         //then
-        Assert.assertEquals("A",substringResult);
+        Assert.assertEquals("A", substringResult);
         lcs.display();
     }
 
     @Test
-    public void should_CorrectlyFindLCS_WhenOneLetterString_Differ_FindLCSMethod(){
+    public void should_CorrectlyFindLCS_WhenOneLetterString_Differ_FindLCSMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence("A", "a");
 
@@ -102,12 +101,12 @@ public class LongestCommonSubsequenceTest
         String substringResult = lcs.findLCS();
 
         //then
-        Assert.assertEquals("",substringResult);
+        Assert.assertEquals("", substringResult);
         lcs.display();
     }
 
     @Test
-    public void should_CorrectlyFindLCS_WhenSpecialSignsInRow_FindLCSMethod(){
+    public void should_CorrectlyFindLCS_WhenSpecialSignsInRow_FindLCSMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence("często_z_odkrywaniem", "rzeczy_nie_trzeba\n_się_spieszyć");
 
@@ -116,25 +115,25 @@ public class LongestCommonSubsequenceTest
         System.out.println(substringResult);
 
         //then
-        Assert.assertEquals("cz__raie",substringResult);
+        Assert.assertEquals("cz__raie", substringResult);
         lcs.display();
     }
 
     @Test
-    public void should_CorrectlyFindLCS_WhenSpecialSignsInColumn_FindLCSMethod(){
+    public void should_CorrectlyFindLCS_WhenSpecialSignsInColumn_FindLCSMethod() {
         //given
-        LongestCommonSubsequence lcs = new LongestCommonSubsequence( "rzeczy_nie_trzeba\n_się_spieszyć", "często_z_odkrywaniem");
+        LongestCommonSubsequence lcs = new LongestCommonSubsequence("rzeczy_nie_trzeba\n_się_spieszyć", "często_z_odkrywaniem");
 
         //when
         String substringResult = lcs.findLCS();
 
         //then
-        Assert.assertEquals("cz__raie",substringResult);
+        Assert.assertEquals("cz__raie", substringResult);
         lcs.display();
     }
 
     @Test
-    public void should_CorrectlyFindLCS_WhenOnlySpecialSigns_FindLCSMethod(){
+    public void should_CorrectlyFindLCS_WhenOnlySpecialSigns_FindLCSMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence("\n\t\b\b\b\b\t\n'\"\"\r\r\\\b\n\n\t\f", "\n\t\b\b\b\b\t\n'\"\"\r\r\\\b\n\n\t\f");
 
@@ -142,12 +141,12 @@ public class LongestCommonSubsequenceTest
         String substringResult = lcs.findLCS();
 
         //then
-        Assert.assertEquals("\n\t\b\b\b\b\t\n'\"\"\r\r\\\b\n\n\t\f",substringResult);
+        Assert.assertEquals("\n\t\b\b\b\b\t\n'\"\"\r\r\\\b\n\n\t\f", substringResult);
         lcs.display();
     }
 
     @Test
-    public void should_CorrectlyFindLCS_WhenTheSameStrings_FindLCSMethod(){
+    public void should_CorrectlyFindLCS_WhenTheSameStrings_FindLCSMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence("FRANCISZKAŃSKA", "FRANCISZKAŃSKA");
 
@@ -155,22 +154,22 @@ public class LongestCommonSubsequenceTest
         String substringResult = lcs.findLCS();
 
         //then
-        Assert.assertEquals("FRANCISZKAŃSKA",substringResult);
+        Assert.assertEquals("FRANCISZKAŃSKA", substringResult);
         lcs.display();
     }
 
     @Test
-    public void should_CorrectlyFindLCS_WhenStringsAreLong_FindLCSMethod(){
+    public void should_CorrectlyFindLCS_WhenStringsAreLong_FindLCSMethod() {
         //given
-        LongestCommonSubsequence lcs = new LongestCommonSubsequence("FRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKA" +
-                "FRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRFRANCISZKAŃSKA\n", "FRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAZUPAZUPA" +
-                "FRANCISZKAŃSKAFRANCISZKAŃSKFRANCISZKAŃSKA\n");
+        LongestCommonSubsequence lcs = new LongestCommonSubsequence("FRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKA"
+                + "FRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRFRANCISZKAŃSKA\n", "FRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAZUPAZUPA"
+                + "FRANCISZKAŃSKAFRANCISZKAŃSKFRANCISZKAŃSKA\n");
 
         //when
         String substringResult = lcs.findLCS();
 
         //then
-        Assert.assertEquals("FRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAZAZAFRANCISZKAŃSKAFRANCISZKAŃSKFRANCISZKAŃSKA\n",substringResult);
+        Assert.assertEquals("FRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAZAZAFRANCISZKAŃSKAFRANCISZKAŃSKFRANCISZKAŃSKA\n", substringResult);
         lcs.display();
     }
 }
