@@ -61,7 +61,7 @@ class LongestCommonSubsequence {
 
     private void createString(StringBuilder sb, int i, int j) {
 
-        if(i == 0 || j == 0) {
+        if (i == 0 || j == 0) {
             return;
         }
 

@@ -188,7 +188,7 @@ public class LongestCommonSubsequenceTest {
     }
 
     @Test
-    public void should_CorrectlyFindLCS_WhenStringsDontHaveCommon_FindLCSMethod(){
+    public void should_CorrectlyFindLCS_WhenStringsDontHaveCommon_FindLCSMethod() {
         //given
         LongestCommonSubsequence lcs = new LongestCommonSubsequence("jadwiga", "przemek");
 
@@ -201,7 +201,7 @@ public class LongestCommonSubsequenceTest {
     }
 
     @Test
-    public void should_CorrectlyPrintDisplay_WhenAverageStrings_DisplayMethod(){
+    public void should_CorrectlyPrintDisplay_WhenAverageStrings_DisplayMethod() {
         ByteArrayOutputStream outPut = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outPut));
 
@@ -213,38 +213,37 @@ public class LongestCommonSubsequenceTest {
         lcs.display();
 
         //then
-        Assert.assertEquals("+-------+-----+-----+-----+-----+-----+\n" +
-                "|       |     |     |     |     |     |\n" +
-                "|       |     |  l  |  u  |  f  |  a  |\n" +
-                "|       |     |     |     |     |     |\n" +
-                "+-------+-----+-----+-----+-----+-----+\n" +
-                "|       |     |     |     |     |     |\n" +
-                "|       |  0  |  0  |  0  |  0  |  0  |\n" +
-                "|       |     |     |     |     |     |\n" +
-                "+-------+-----+-----+-----+-----+-----+\n" +
-                "|       |     |     |     |     |     |\n" +
-                "|   z   |  0  |< 0  |  0  |  0  |  0  |\n" +
-                "|       |     |     |     |     |     |\n" +
-                "+-------+-----+-----+-----+-----+-----+\n" +
-                "|       |     |     |\\    |     |     |\n" +
-                "|   u   |  0  |  0  |  1  |  1  |  1  |\n" +
-                "|       |     |     |     |     |     |\n" +
-                "+-------+-----+-----+-----+-----+-----+\n" +
-                "|       |     |     |  ^  |     |     |\n" +
-                "|   p   |  0  |  0  |  1  |< 1  |  1  |\n" +
-                "|       |     |     |     |     |     |\n" +
-                "+-------+-----+-----+-----+-----+-----+\n" +
-                "|       |     |     |     |     |\\    |\n" +
-                "|   a   |  0  |  0  |  1  |  1  |  2  |\n" +
-                "|       |     |     |     |     |     |\n" +
-                "+-------+-----+-----+-----+-----+-----+", outPut.toString().trim());
-
+        Assert.assertEquals("+-------+-----+-----+-----+-----+-----+\n"
+                + "|       |     |     |     |     |     |\n"
+                + "|       |     |  l  |  u  |  f  |  a  |\n"
+                + "|       |     |     |     |     |     |\n"
+                + "+-------+-----+-----+-----+-----+-----+\n"
+                + "|       |     |     |     |     |     |\n"
+                + "|       |  0  |  0  |  0  |  0  |  0  |\n"
+                + "|       |     |     |     |     |     |\n"
+                + "+-------+-----+-----+-----+-----+-----+\n"
+                + "|       |     |     |     |     |     |\n"
+                + "|   z   |  0  |< 0  |  0  |  0  |  0  |\n"
+                + "|       |     |     |     |     |     |\n"
+                + "+-------+-----+-----+-----+-----+-----+\n"
+                + "|       |     |     |\\    |     |     |\n"
+                + "|   u   |  0  |  0  |  1  |  1  |  1  |\n"
+                + "|       |     |     |     |     |     |\n"
+                + "+-------+-----+-----+-----+-----+-----+\n"
+                + "|       |     |     |  ^  |     |     |\n"
+                + "|   p   |  0  |  0  |  1  |< 1  |  1  |\n"
+                + "|       |     |     |     |     |     |\n"
+                + "+-------+-----+-----+-----+-----+-----+\n"
+                + "|       |     |     |     |     |\\    |\n"
+                + "|   a   |  0  |  0  |  1  |  1  |  2  |\n"
+                + "|       |     |     |     |     |     |\n"
+                + "+-------+-----+-----+-----+-----+-----+", outPut.toString().trim());
 
         System.setOut(System.out);
     }
 
     @Test
-    public void should_CorrectlyPrintDisplay_WhenEmptyString_DisplayMethod(){
+    public void should_CorrectlyPrintDisplay_WhenEmptyString_DisplayMethod() {
         ByteArrayOutputStream outPut = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outPut));
 
@@ -256,15 +255,15 @@ public class LongestCommonSubsequenceTest {
         lcs.display();
 
         //then
-        Assert.assertEquals("+-------+-----+-----+-----+-----+-----+\n" +
-                "|       |     |     |     |     |     |\n" +
-                "|       |     |  l  |  u  |  f  |  a  |\n" +
-                "|       |     |     |     |     |     |\n" +
-                "+-------+-----+-----+-----+-----+-----+\n" +
-                "|       |     |     |     |     |     |\n" +
-                "|       |  0  |  0  |  0  |  0  |  0  |\n" +
-                "|       |     |     |     |     |     |\n" +
-                "+-------+-----+-----+-----+-----+-----+", outPut.toString().trim());
+        Assert.assertEquals("+-------+-----+-----+-----+-----+-----+\n"
+                + "|       |     |     |     |     |     |\n"
+                + "|       |     |  l  |  u  |  f  |  a  |\n"
+                + "|       |     |     |     |     |     |\n"
+                + "+-------+-----+-----+-----+-----+-----+\n"
+                + "|       |     |     |     |     |     |\n"
+                + "|       |  0  |  0  |  0  |  0  |  0  |\n"
+                + "|       |     |     |     |     |     |\n"
+                + "+-------+-----+-----+-----+-----+-----+", outPut.toString().trim());
 
         System.setOut(System.out);
     }
