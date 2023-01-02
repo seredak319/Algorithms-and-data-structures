@@ -1,8 +1,9 @@
 package pl.edu.pw.ee;
 
 import org.junit.Assert;
-
 import org.junit.Test;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 public class LongestCommonSubsequenceTest 
 {
@@ -172,5 +173,100 @@ public class LongestCommonSubsequenceTest
         //then
         Assert.assertEquals("FRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAFRANCISZKAŃSKAZAZAFRANCISZKAŃSKAFRANCISZKAŃSKFRANCISZKAŃSKA\n",substringResult);
         lcs.display();
+    }
+
+    @Test
+    public void should_CorrectlyFindLCS_WhenSpaceIncluded_FindLCSMethod() {
+        //given
+        LongestCommonSubsequence lcs = new LongestCommonSubsequence("POLITECHNIKA drzewo", "TOALETA drewno");
+
+        //when
+        String substringResult = lcs.findLCS();
+
+        //then
+        Assert.assertEquals("OLEA drewo", substringResult);
+        lcs.display();
+    }
+
+    @Test
+    public void should_CorrectlyFindLCS_WhenStringsDontHaveCommon_FindLCSMethod(){
+        //given
+        LongestCommonSubsequence lcs = new LongestCommonSubsequence("jadwiga", "przemek");
+
+        //when
+        String substringResult = lcs.findLCS();
+
+        //then
+        System.out.println(substringResult);
+        lcs.display();
+    }
+
+    @Test
+    public void should_CorrectlyPrintDisplay_WhenAverageStrings_DisplayMethod(){
+        ByteArrayOutputStream outPut = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outPut));
+
+        //given
+        LongestCommonSubsequence lcs = new LongestCommonSubsequence("zupa", "lufa");
+
+        //when
+        String substringResult = lcs.findLCS();
+        lcs.display();
+
+        //then
+        Assert.assertEquals("+-------+-----+-----+-----+-----+-----+\n" +
+                "|       |     |     |     |     |     |\n" +
+                "|       |     |  l  |  u  |  f  |  a  |\n" +
+                "|       |     |     |     |     |     |\n" +
+                "+-------+-----+-----+-----+-----+-----+\n" +
+                "|       |     |     |     |     |     |\n" +
+                "|       |  0  |  0  |  0  |  0  |  0  |\n" +
+                "|       |     |     |     |     |     |\n" +
+                "+-------+-----+-----+-----+-----+-----+\n" +
+                "|       |     |     |     |     |     |\n" +
+                "|   z   |  0  |< 0  |  0  |  0  |  0  |\n" +
+                "|       |     |     |     |     |     |\n" +
+                "+-------+-----+-----+-----+-----+-----+\n" +
+                "|       |     |     |\\    |     |     |\n" +
+                "|   u   |  0  |  0  |  1  |  1  |  1  |\n" +
+                "|       |     |     |     |     |     |\n" +
+                "+-------+-----+-----+-----+-----+-----+\n" +
+                "|       |     |     |  ^  |     |     |\n" +
+                "|   p   |  0  |  0  |  1  |< 1  |  1  |\n" +
+                "|       |     |     |     |     |     |\n" +
+                "+-------+-----+-----+-----+-----+-----+\n" +
+                "|       |     |     |     |     |\\    |\n" +
+                "|   a   |  0  |  0  |  1  |  1  |  2  |\n" +
+                "|       |     |     |     |     |     |\n" +
+                "+-------+-----+-----+-----+-----+-----+", outPut.toString().trim());
+
+
+        System.setOut(System.out);
+    }
+
+    @Test
+    public void should_CorrectlyPrintDisplay_WhenEmptyString_DisplayMethod(){
+        ByteArrayOutputStream outPut = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outPut));
+
+        //given
+        LongestCommonSubsequence lcs = new LongestCommonSubsequence("", "lufa");
+
+        //when
+        String substringResult = lcs.findLCS();
+        lcs.display();
+
+        //then
+        Assert.assertEquals("+-------+-----+-----+-----+-----+-----+\n" +
+                "|       |     |     |     |     |     |\n" +
+                "|       |     |  l  |  u  |  f  |  a  |\n" +
+                "|       |     |     |     |     |     |\n" +
+                "+-------+-----+-----+-----+-----+-----+\n" +
+                "|       |     |     |     |     |     |\n" +
+                "|       |  0  |  0  |  0  |  0  |  0  |\n" +
+                "|       |     |     |     |     |     |\n" +
+                "+-------+-----+-----+-----+-----+-----+", outPut.toString().trim());
+
+        System.setOut(System.out);
     }
 }
