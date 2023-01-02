@@ -183,7 +183,7 @@ public class LongestCommonSubsequenceTest {
         String substringResult = lcs.findLCS();
 
         //then
-        Assert.assertEquals("OLEA drewo", substringResult);
+        Assert.assertEquals("OLTA drewo", substringResult);
         lcs.display();
     }
 
@@ -222,16 +222,16 @@ public class LongestCommonSubsequenceTest {
                 + "|       |  0  |  0  |  0  |  0  |  0  |\n"
                 + "|       |     |     |     |     |     |\n"
                 + "+-------+-----+-----+-----+-----+-----+\n"
-                + "|       |     |     |     |     |     |\n"
-                + "|   z   |  0  |< 0  |  0  |  0  |  0  |\n"
+                + "|       |     |  ^  |     |     |     |\n"
+                + "|   z   |  0  |  0  |  0  |  0  |  0  |\n"
                 + "|       |     |     |     |     |     |\n"
                 + "+-------+-----+-----+-----+-----+-----+\n"
                 + "|       |     |     |\\    |     |     |\n"
-                + "|   u   |  0  |  0  |  1  |  1  |  1  |\n"
+                + "|   u   |  0  |  0  |  1  |< 1  |  1  |\n"
                 + "|       |     |     |     |     |     |\n"
                 + "+-------+-----+-----+-----+-----+-----+\n"
-                + "|       |     |     |  ^  |     |     |\n"
-                + "|   p   |  0  |  0  |  1  |< 1  |  1  |\n"
+                + "|       |     |     |     |  ^  |     |\n"
+                + "|   p   |  0  |  0  |  1  |  1  |  1  |\n"
                 + "|       |     |     |     |     |     |\n"
                 + "+-------+-----+-----+-----+-----+-----+\n"
                 + "|       |     |     |     |     |\\    |\n"

@@ -42,12 +42,12 @@ class LongestCommonSubsequence {
                     sign[i][j] = '\\';
 
                 } else {
-                    if (map[i][j - 1] >= map[i - 1][j]) {
-                        map[i][j] = map[i][j - 1];
-                        sign[i][j] = '<';
-                    } else {
+                    if (map[i][j - 1] <= map[i - 1][j]) {
                         map[i][j] = map[i - 1][j];
                         sign[i][j] = '^';
+                    } else {
+                        map[i][j] = map[i][j - 1];
+                        sign[i][j] = '<';
                     }
                 }
             }
