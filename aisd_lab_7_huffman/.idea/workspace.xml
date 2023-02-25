@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="033f5e38-d533-4bea-809d-1179c7e22ff5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pw/ee/HuffmanTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pw/ee/pq/SNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pw/ee/pq/SPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pw/ee/services/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pw/ee/services/PriorityQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/test100K/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testEmptyCode/text_code.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testEmptyCode/text_tree.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testEmptyFile/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testEmptyTree/text_code.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testEmptyTree/text_tree.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testNiemanie/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testNiemanieRefrain/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testNotAscii/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testNotMatchingTreeAndCode/text_code.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testNotMatchingTreeAndCode/text_tree.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testOneLetterFile/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testOnlyCodeAndTree/text_code.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testOnlyCodeAndTree/text_tree.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test/testOwn/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/edu/pw/ee/HuffmanTreeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/edu/pw/ee/pq/SNodeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/edu/pw/ee/pq/SPQTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aisd_lab5_rbt/src/main/java/pl/edu/pw/ee/RedBlackTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../aisd_lab5_rbt/src/main/java/pl/edu/pw/ee/RedBlackTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aisd_lab5_rbt/src/test/java/pl/edu/pw/ee/RedBlackTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../aisd_lab5_rbt/src/test/java/pl/edu/pw/ee/RedBlackTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/pw/ee/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pw/ee/Huffman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/edu/pw/ee/HuffmanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/edu/pw/ee/HuffmanTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/resources/test/testNiemanieRefrain/text.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/test/testOneLetterFile/text_code.txt" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2ISVcy9ke4HZvt9fsiHIjaDRxa5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last.edited.regexp": "",
+    "last_opened_file_path": "C:/Users/Krystian/IdeaProjects/SuperSnakeAfterBug",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.4448276",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JAVA"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Krystian\IdeaProjects\2022Z_AISD_git_lab_GR5___gr133\aisd_lab_7_huffman\src\main\resources\test\temp" />
+      <recent name="C:\Users\Krystian\IdeaProjects\2022Z_AISD_git_lab_GR5___gr133\aisd_lab_7_huffman\src\main\resources\test\testNotMatchingTreeAndCode" />
+      <recent name="C:\Users\Krystian\IdeaProjects\2022Z_AISD_git_lab_GR5___gr133\aisd_lab_7_huffman\src\main\resources\test\testNotMachingTreeAndCode" />
+      <recent name="C:\Users\Krystian\IdeaProjects\2022Z_AISD_git_lab_GR5___gr133\aisd_lab_7_huffman\src\main\resources\test\testOnlyCodeAndTree" />
+      <recent name="C:\Users\Krystian\IdeaProjects\2022Z_AISD_git_lab_GR5___gr133\aisd_lab_7_huffman\src\main\resources\test\testInvalidCode" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Krystian\IdeaProjects\2022Z_AISD_git_lab_GR5___gr133\aisd_lab_7_huffman\src\main\resources\test\testBigText" />
+      <recent name="C:\Users\Krystian\IdeaProjects\2022Z_AISD_git_lab_GR5___gr133\aisd_lab_7_huffman\src\main\resources\test\testNiemanie" />
+      <recent name="C:\Users\Krystian\IdeaProjects\2022Z_AISD_git_lab_GR5___gr133\aisd_lab_7_huffman\src\main\resources\test\testNiemanieRefren" />
+      <recent name="C:\Users\Krystian\IdeaProjects\2022Z_AISD_git_lab_GR5___gr133\aisd_lab_7_huffman\src\main\resources\test\testEmptyFile" />
+      <recent name="C:\Users\Krystian\IdeaProjects\2022Z_AISD_git_lab_GR5___gr133\aisd_lab_7_huffman\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Java Scratch.Scratch">
+    <configuration name="All in aisd_lab_7_huffman" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aisd_lab_7_huffman" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HuffmanTest.tesss" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aisd_lab_7_huffman" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pw.ee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pw.ee" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pw.ee.HuffmanTest" />
+      <option name="METHOD_NAME" value="tesss" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HuffmanTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aisd_lab_7_huffman" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pw.ee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pw.ee" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pw.ee.HuffmanTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SNodeTest.should_CorrectlySetAndGetValueAndKey_WithChildren" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aisd_lab_7_huffman" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pw.ee.pq.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pw.ee.pq" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pw.ee.pq.SNodeTest" />
+      <option name="METHOD_NAME" value="should_CorrectlySetAndGetValueAndKey_WithChildren" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Java Scratch.Scratch" />
+        <item itemvalue="JUnit.HuffmanTest.tesss" />
+        <item itemvalue="JUnit.HuffmanTest.test" />
+        <item itemvalue="JUnit.SNodeTest.should_CorrectlySetAndGetValueAndKey_WithChildren" />
+        <item itemvalue="JUnit.All in aisd_lab_7_huffman" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="033f5e38-d533-4bea-809d-1179c7e22ff5" name="Changes" comment="" />
+      <created>1670175055436</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670175055436</updated>
+      <workItem from="1670175056742" duration="1849000" />
+      <workItem from="1670183054860" duration="2311000" />
+      <workItem from="1670437621872" duration="8674000" />
+      <workItem from="1670449970502" duration="4537000" />
+      <workItem from="1670498717888" duration="24381000" />
+      <workItem from="1670533673258" duration="8151000" />
+      <workItem from="1670671368664" duration="22491000" />
+      <workItem from="1670770714778" duration="8653000" />
+      <workItem from="1670779381923" duration="14521000" />
+      <workItem from="1670835461461" duration="15237000" />
+      <workItem from="1670854641514" duration="5544000" />
+      <workItem from="1670860223720" duration="632000" />
+      <workItem from="1670879494896" duration="768000" />
+      <workItem from="1670964776197" duration="2000" />
+      <workItem from="1671231820552" duration="706000" />
+      <workItem from="1671306869805" duration="843000" />
+      <workItem from="1671399836935" duration="32000" />
+      <workItem from="1671464746813" duration="5068000" />
+      <workItem from="1671474800765" duration="2000" />
+      <workItem from="1671487044383" duration="6000" />
+      <workItem from="1672396452517" duration="38000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bin" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/aisd_lab_7_huffman$pl_edu_pw_ee_pq_in_aisd_lab_7_huffman.ic" NAME="pl.edu.pw.ee.pq in aisd_lab_7_huffman Coverage Results" MODIFIED="1670453751231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pl.edu.pw.ee.pq.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aisd_lab_7_huffman$All_in_aisd_lab_7_huffman.ic" NAME="All in aisd_lab_7_huffman Coverage Results" MODIFIED="1670859474286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/aisd_lab_7_huffman$SStackTest.ic" NAME="SStackTest Coverage Results" MODIFIED="1670504879972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pl.edu.pw.ee.stack.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aisd_lab_7_huffman$HuffmanTest.ic" NAME="HuffmanTest Coverage Results" MODIFIED="1670855038751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pl.edu.pw.ee.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aisd_lab_7_huffman$HuffmanTreeTest.ic" NAME="HuffmanTreeTest Coverage Results" MODIFIED="1670791664669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pl.edu.pw.ee.*</FILTER>
+    </SUITE>
+  </component>
+</project>

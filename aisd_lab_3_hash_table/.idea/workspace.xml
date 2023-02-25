@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8a4e112e-a810-47e4-9634-abfb027c8c74" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../aisd_lab_10_min_spannig_tree/src/main/java/pl/edu/pw/ee/ReaderGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/classes/pl/edu/pw/ee/LongestCommonSubsequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/classes/pl/edu/pw/ee/LongestCommonSubsequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/surefire-reports/TEST-pl.edu.pw.ee.LongestCommonSubsequenceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/surefire-reports/TEST-pl.edu.pw.ee.LongestCommonSubsequenceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/surefire-reports/pl.edu.pw.ee.LongestCommonSubsequenceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/surefire-reports/pl.edu.pw.ee.LongestCommonSubsequenceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/test-classes/pl/edu/pw/ee/LongestCommonSubsequenceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../aisd_lab_9_longest_common_subsequence/target/test-classes/pl/edu/pw/ee/LongestCommonSubsequenceTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2GjebpaaYxLfDFUo7BX8bRpXwKU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Krystian/IdeaProjects/2022Z_AISD_git_lab_GR5___gr133/aisd_lab_4_hash_table_open_adressing"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.HashListChainingTest">
+    <configuration name="HashListChainingPerformanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aisd_lab_3_hash_table" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pw.ee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pw.ee" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pw.ee.HashListChainingPerformanceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashListChainingPerformanceTest.hashSizeAsA262147PrimeNumberPerformanceTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aisd_lab_3_hash_table" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pw.ee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pw.ee" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pw.ee.HashListChainingPerformanceTest" />
+      <option name="METHOD_NAME" value="hashSizeAsA262147PrimeNumberPerformanceTime" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashListChainingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aisd_lab_3_hash_table" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pw.ee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pw.ee" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pw.ee.HashListChainingTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashListChainingTest.hashListDeletingTwoTimesTheSameElementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aisd_lab_3_hash_table" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pw.ee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pw.ee" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pw.ee.HashListChainingTest" />
+      <option name="METHOD_NAME" value="hashListDeletingTwoTimesTheSameElementTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashListChainingTest.hashListWithSizeOneCorrectDeletingFirstElementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aisd_lab_3_hash_table" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.pw.ee.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.pw.ee" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.pw.ee.HashListChainingTest" />
+      <option name="METHOD_NAME" value="hashListWithSizeOneCorrectDeletingFirstElementTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HashListChainingTest" />
+        <item itemvalue="JUnit.HashListChainingTest.hashListWithSizeOneCorrectDeletingFirstElementTest" />
+        <item itemvalue="JUnit.HashListChainingTest.hashListDeletingTwoTimesTheSameElementTest" />
+        <item itemvalue="JUnit.HashListChainingPerformanceTest" />
+        <item itemvalue="JUnit.HashListChainingPerformanceTest.hashSizeAsA262147PrimeNumberPerformanceTime" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a4e112e-a810-47e4-9634-abfb027c8c74" name="Changes" comment="" />
+      <created>1666906495532</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666906495532</updated>
+      <workItem from="1669054807801" duration="46000" />
+      <workItem from="1673187922255" duration="47000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
